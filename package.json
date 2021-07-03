@@ -15,9 +15,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "element-ui": "^2.15.3",
+    "express": "^4.17.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/proxy": "^2.1.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
@@ -28,7 +31,7 @@
   "config": {
     "nuxt": {
       "host": "127.0.0.1",
-      "port": 3001
+      "port": 5000
     }
   }
 }

@@ -13,11 +13,3 @@ export default {
   transition: 'test'
 }
 </script>
-<style scoped>
-  .test-enter-active, .test-leave-active {
-    transition: 0.5s ease all;
-}
-  .test-enter, .test-leave-active {
-    margin-left: -62.5rem;
-}
-</style>

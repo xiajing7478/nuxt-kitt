@@ -7,6 +7,9 @@
       <h2 class="subtitle">
         Nuxt.js project
       </h2>
+      <h2>
+        {{ list }}
+      </h2>
       <!-- <img src="../assets/imgs/nuxt渲染.png"/> -->
       <nuxt-link :to="{ name: 'user', params: { newsId: 3306} }">userIndex</nuxt-link>
       <!-- <nuxt-link to="/user">userIndex</nuxt-link> -->
@@ -53,11 +56,17 @@ export default {
    * ssr && csr
    */
    // 读取数据，返回给组件
-  async asyncData() {
-    console.log('asyncData')
+  async asyncData({$axios}) {
+    // console.log('asyncData')
+    // console.log($axios)
+    // console.log(axios)
     let { data } = await axios.get('http://106.14.184.49:19001/api/Enum/LoadAll')
+    let res = await $axios({ url: '/data/list.json'})
+    // let result = await $axios.get('http://127.0.0.1:5001/login')
     return {
-      info: data.result.enums.AbnormalAmountTypeEnum
+      info: data.result.enums.AbnormalAmountTypeEnum,
+      list: res.data.title,
+      // user: result.data
     }
   },
   // 读取数据给vuex 

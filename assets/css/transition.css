@@ -1,14 +1,13 @@
-/* 入 */
-
-.page-enter-active,
-.page-leave-active {
+/* 全局过渡效果 */
+.page-enter-active, .page-leave-active {
     transition: opacity 0.3s;
 }
+.page-enter, .page-leave-active {opacity: 0; }
 
-
-/* 出 */
-
-.page-enter,
-.page-leave-active {
-    opacity: 0;
+/* 单独过渡效果 */
+.test-enter-active, .test-leave-active {
+    transition: 0.5s ease all;
+}
+  .test-enter, .test-leave-active {
+    margin-left: -62.5rem;
 }

@@ -46,16 +46,27 @@ module.exports = {
      * 插件
      */
     plugins: [
-        { src: '~plugins/ElementUI', ssr: true }
+        { src: '~plugins/ElementUI', ssr: true },
+        '~/plugins/router.js',
     ],
     /**
      * 模块
      */
     modules: [
-
+        '@nuxtjs/axios'
     ],
     axios: {
-
+        proxy: true, //开启axios跨域
+        // prefix: '/api' // baseUrl
+    },
+    proxy: {
+        '/api/': {
+            target: 'http://127.0.0.1:3001',
+            changeOrigin: true,
+            pathRewrite: {
+                // '^/api': ''
+            }
+        }
     },
     /*
      ** Build configuration

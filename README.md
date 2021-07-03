@@ -61,9 +61,17 @@
     路由守卫
       前置
         依赖中间件middleware，插件
-        全局守卫：nuxt.config 指向middleware
-                 layouts定义中间件
-        组件独享守卫： middleware
+        全局守卫：nuxt.config.js指向middleware
+                布局层layouts定义中间件
+        组件独享守卫： 页面层middleware
+        插件全局前置守卫
+      后置
+        使用Vue的beforeRouterLeave钩子
+        插件全局后置守卫
+
+## 数据交互    
+    安装@nuxtjs/axios, @nuxtjs/proxy
+         
           
 
 ## Build Setup
