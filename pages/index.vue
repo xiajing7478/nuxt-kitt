@@ -8,8 +8,9 @@
         Nuxt.js project
       </h2>
       <h2>
-        {{ list }}
+        <!-- {{ list }} -->
       </h2>
+      <h2>{{user}}</h2>
       <!-- <img src="../assets/imgs/nuxt渲染.png"/> -->
       <nuxt-link :to="{ name: 'user', params: { newsId: 3306} }">userIndex</nuxt-link>
       <!-- <nuxt-link to="/user">userIndex</nuxt-link> -->
@@ -20,9 +21,9 @@
           <el-button type="primary">按钮</el-button>
         </el-col>
         <el-col :span="24">
-          <ul>
+          <!-- <ul>
             <li v-for="item in info" :key="item.value">{{item.text}}</li>
-          </ul>
+          </ul> -->
         </el-col>
       </el-row>
     </div>
@@ -57,15 +58,12 @@ export default {
    */
    // 读取数据，返回给组件
   async asyncData({$axios}) {
-    // console.log('asyncData')
-    // console.log($axios)
-    // console.log(axios)
-    let { data } = await axios.get('http://106.14.184.49:19001/api/Enum/LoadAll')
+    // let { data } = await axios.get('http://106.14.184.49:19001/api/Enum/LoadAll')
     let res = await $axios({ url: '/data/list.json'})
     // let result = await $axios.get('http://127.0.0.1:5001/login')
     return {
-      info: data.result.enums.AbnormalAmountTypeEnum,
-      list: res.data.title,
+      // info: data.result.enums.AbnormalAmountTypeEnum || [],
+      list: res.data.title || '',
       // user: result.data
     }
   },

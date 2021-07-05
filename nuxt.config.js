@@ -22,7 +22,7 @@ module.exports = {
         middleware: 'auth',
         // 扩展路由
         extendRoutes(routes, resolve) {
-            console.log('routes', routes)
+            // console.log('routes', routes)
             routes.push({
                 name: 'home',
                 path: '/index',
@@ -31,9 +31,10 @@ module.exports = {
         }
     },
     /*
-     ** Customize the progress bar color
+     ** 自定义loading效果
      */
-    loading: { color: '#3B8070' },
+    // loading: { color: '#3B8070' },
+    loading: '~/components/loading.vue',
     /**
      ** 全局css（会进行webpack打包处理）
      */
@@ -48,6 +49,7 @@ module.exports = {
     plugins: [
         { src: '~plugins/ElementUI', ssr: true },
         '~/plugins/router.js',
+        { src: '~/plugins/axios', ssr: true }
     ],
     /**
      * 模块
