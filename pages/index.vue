@@ -10,7 +10,10 @@
       <h2>
         <!-- {{ list }} -->
       </h2>
-      <h2>{{user}}</h2>
+      <!-- <h2>{{user}}</h2> -->
+      <h4>vuex操作</h4>
+      <el-button type="primary" @click="getStore">编程时操作</el-button>
+      <h1>{{token}}</h1>
       <!-- <img src="../assets/imgs/nuxt渲染.png"/> -->
       <nuxt-link :to="{ name: 'user', params: { newsId: 3306} }">userIndex</nuxt-link>
       <!-- <nuxt-link to="/user">userIndex</nuxt-link> -->
@@ -31,6 +34,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations, mapGetters, mapActions} from 'vuex'
 import axios from 'axios'
 export default {
   // asyncData的方法会把值返回到data中。是组件创建（页面渲染）之前的动作，所以不能使用this.info,
@@ -49,10 +53,27 @@ export default {
 
   data() {
     return {
-      msg: 'nuxt....'
+      msg: 'nuxt....',
+      // token: this.$store.state.user.token
     }
   },
-
+  computed: {
+    // token() {
+    //   return this.$store.state.user.token
+    // },
+    ...mapState('user', ['token'])
+  },
+  methods: {
+    getStore() {
+      // this.$store.dispatch('user/A_UPDATE_USER', { token: '1234'} )
+      // this.$store.commit('user/M_UPDATE_USER', { token: '123456' })
+      // 可以用这个
+      this.A_UPDATE_USER({ token: '12345'})
+      // this.M_UPDATE_USER({ token: '1234567'})
+    },
+    ...mapActions('user', ['A_UPDATE_USER']),
+    ...mapMutations('user', ['M_UPDATE_USER'])
+  },
   /**
    * ssr && csr
    */
@@ -68,7 +89,7 @@ export default {
     }
   },
   // 读取数据给vuex 
-  fetch({ store }) {
+  fetch({ $axios, store }) {
     console.log('fetch')
   },
   // 参数的有效性

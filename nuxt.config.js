@@ -55,7 +55,8 @@ module.exports = {
      * 模块
      */
     modules: [
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        'cookie-universal-nuxt'
     ],
     axios: {
         proxy: true, //开启axios跨域
@@ -75,7 +76,7 @@ module.exports = {
      */
     build: {
         vendor: ['element-ui', 'axios'],
-        // transpile: [/^element-ui/],
+        transpile: [/^element-ui/],
         // loaders: [{
         //     test: /\.(png|jpe?g|gif|svg)$/,
         //     loader: "url-loader",

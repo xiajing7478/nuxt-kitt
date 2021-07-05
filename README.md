@@ -88,7 +88,12 @@
         }
     },
     自定义loading
-    
+
+## vuex
+    模块方式 store/index
+    状态持久化 && token效验
+    cnpm i cookie-universal-nuxt -S
+
          
           
 
