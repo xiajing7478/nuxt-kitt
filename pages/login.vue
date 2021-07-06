@@ -1,16 +1,20 @@
 <template>
-  <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-    <el-form-item label="用户名" prop="username">
-      <el-input v-model.number="ruleForm.username"></el-input>
-    </el-form-item>
-    <el-form-item label="密码" prop="password">
-      <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-      <el-button @click="resetForm('ruleForm')">重置</el-button>
-    </el-form-item>
-  </el-form>
+  <div class="login-wrap">
+    <h3>登录</h3>
+    <el-divider></el-divider>
+    <el-form label-position="top" :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-form-item label="用户名" prop="username">
+        <el-input v-model.number="ruleForm.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="loginBtn('ruleForm')">登录</el-button>
+        <el-button @click="regBtn">注册</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 <script>
 import { encrypt } from "../utils/index";
@@ -33,7 +37,7 @@ export default {
       };
     },
     methods: {
-      submitForm(formName) {
+      loginBtn(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             this.login()
@@ -54,7 +58,13 @@ export default {
         } else {
           this.$router.replace(this.$route.path)
         }
+      },
+      regBtn() {
+        this.$router.push('/reg')
       }
     }
 }
 </script>
+<style scoped>
+
+</style>

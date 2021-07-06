@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Header v-if="bNav"></Header>
     <nuxt/>
   </div>
 </template>
@@ -11,6 +11,23 @@ export default {
   // 也可以这样定义
   middleware() {
     console.log('middleware layout page')
+  },
+  data() {
+    return {
+      bNav: true
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(route) {
+        if (/login|reg/.test(route.path)) {
+          this.bNav = false
+        } else {
+          this.bNav = true
+        }
+      }
+    }
   },
   components: { Header }
 }

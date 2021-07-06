@@ -1,5 +1,5 @@
 export const state = () => ({
-    token: 'aaa'
+    token: ''
 })
 
 export const actions = {

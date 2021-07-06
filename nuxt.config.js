@@ -49,6 +49,7 @@ module.exports = {
     plugins: [
         { src: '~plugins/ElementUI', ssr: true },
         '~/plugins/router.js',
+        '~/plugins/mixins.js',
         { src: '~/plugins/axios', ssr: true }
     ],
     /**
