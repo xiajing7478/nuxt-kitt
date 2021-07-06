@@ -1,11 +1,8 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
+      <h2 class="title">
         nuxt-kitt
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
       </h2>
       <h2>
         <!-- {{ list }} -->
@@ -28,6 +25,9 @@
             <li v-for="item in info" :key="item.value">{{item.text}}</li>
           </ul> -->
         </el-col>
+        <!-- <el-col :span="24">
+            <img src='~assets/imgs/nuxt渲染.png' width="100%;" alt="">
+        </el-col> -->
       </el-row>
     </div>
   </section>
@@ -111,6 +111,13 @@ export default {
   updated() { console.log('updated') },
   beforeMount() { console.log('beforeMount') },
   unmounted() { console.log('unmounted') },
+
+  //独立设置head信息
+  head() {
+    return {
+      title: 'abcd...'
+    }
+  }
 }
 </script>
 
