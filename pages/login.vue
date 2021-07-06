@@ -17,7 +17,6 @@
   </div>
 </template>
 <script>
-import { encrypt } from "../utils/index";
 export default {
   name: 'login',
   data() {

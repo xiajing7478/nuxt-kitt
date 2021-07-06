@@ -9,6 +9,7 @@ module.exports = {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            // 防止描述被覆盖
             { hid: 'description', name: 'description', content: pkg.description }
         ],
         link: [
@@ -57,8 +58,14 @@ module.exports = {
      */
     modules: [
         '@nuxtjs/axios',
-        'cookie-universal-nuxt'
+        'cookie-universal-nuxt',
+        '@nuxtjs/style-resources'
     ],
+    styleResources: {
+        'scss': [
+            './assets/scss/global.scss'
+        ]
+    },
     axios: {
         proxy: true, //开启axios跨域
         // prefix: '/api' // baseUrl

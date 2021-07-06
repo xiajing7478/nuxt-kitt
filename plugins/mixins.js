@@ -17,3 +17,17 @@ Vue.directive('direct2', direct2)
 // 全局组件
 import UCButton from '../components/global/index'
 Vue.component('uc-button', UCButton)
+
+// mixin methods 
+Vue.mixin({
+    methods: {
+        $seo(title, content, payload = {}) {
+            return {
+                title,
+                meta: [
+                    { hide: 'description', name: 'keywords', content }
+                ].concat(payload)
+            }
+        }
+    }
+})
