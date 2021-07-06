@@ -10,7 +10,6 @@ export default {
 //    console.log('页面独享前置守卫')
 //    redirect('/login')
 //  } 
-
   methods: {
     logout() {
       this.$cookies.remove('user');
