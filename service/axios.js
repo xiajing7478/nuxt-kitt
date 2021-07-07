@@ -32,7 +32,6 @@ export default {
         })
     },
     get(url, data) {
-        console.log('get request url', url)
         return service({
             method: 'get',
             url,

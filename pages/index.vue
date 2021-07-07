@@ -12,9 +12,9 @@
       <el-button type="primary" @click="getStore">编程时操作</el-button>
       <h1>{{token}}</h1>
       <!-- <img src="../assets/imgs/nuxt渲染.png"/> -->
-      <nuxt-link :to="{ name: 'user', params: { newsId: 3306} }">userIndex</nuxt-link>
+      <!-- <nuxt-link :to="{ name: 'user', params: { newsId: 3306} }">userIndex</nuxt-link> -->
       <!-- <nuxt-link to="/user">userIndex</nuxt-link> -->
-      <nuxt-link to="/user/one?id=5">userOne</nuxt-link>
+      <!-- <nuxt-link to="/user/one?id=5">userOne</nuxt-link> -->
 
       <el-row :gutter="10">
         <el-col :span="24">
