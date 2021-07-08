@@ -14,12 +14,16 @@ module.exports = {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+            // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
         ],
-        script: [{
-            src: 'https://lib.baomitu.com/jquery/3.6.0/jquery.min.js'
-        }]
+        // script: [{
+        //     src: 'https://lib.baomitu.com/jquery/3.6.0/jquery.min.js'
+        // }]
     },
+    // server: {
+    //     prot: 8000,
+    //     host: '0.0.0.0'
+    // },
     /**
      * 配置中定义中间件
      */
@@ -76,10 +80,10 @@ module.exports = {
     },
     proxy: {
         '/api/': {
-            target: 'http://127.0.0.1:3001',
+            target: 'http://hd215.api.yesapi.cn',
             changeOrigin: true,
             pathRewrite: {
-                // '^/api': ''
+                '^/api': ''
             }
         }
     },

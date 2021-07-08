@@ -94,6 +94,20 @@
     状态持久化 && token效验
     cnpm i cookie-universal-nuxt -S
 
+## 部署
+    nuxt
+      npm run build 打包 
+        .nuxt
+        package-lock.json
+        package.json
+        nuxt.config.js
+        static
+        server
+    api服务器
+      全部copy到服务器
+      
+
+
          
           
 

@@ -1,5 +1,6 @@
 export const state = () => ({
-    token: ''
+    token: '',
+    uuid: ''
 })
 
 export const actions = {
@@ -11,5 +12,6 @@ export const actions = {
 export const mutations = {
     M_UPDATE_USER(state, payload) {
         state.token = payload.token
+        state.uuid = payload.uuid
     }
 }
